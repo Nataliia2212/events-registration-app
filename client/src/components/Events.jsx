@@ -1,17 +1,17 @@
 import React, { useEffect } from "react";
 import { fetchUsers } from "../services/api";
 
-const UserList = () => {
+const Events = () => {
   useEffect(() => {
-    fetchUsers().then((response) => console.log("ok"));
+    // fetchUsers().then((response) => console.log("ok"));
   }, []);
 
   return (
     <div>
-      <h2>User List</h2>
+      <h2>Events</h2>
       <ul></ul>
     </div>
   );
 };
 
-export default UserList;
+export default Events;
