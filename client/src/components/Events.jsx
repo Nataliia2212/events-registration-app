@@ -1,15 +1,22 @@
-import React, { useEffect } from "react";
-import { fetchUsers } from "../services/api";
+import React from "react";
+import { fetchEvents } from "../services/api";
+import { useHttp } from "../hooks/useHTTP";
+import CardOfEvent from "./CardOfEvent";
 
 const Events = () => {
-  useEffect(() => {
-    // fetchUsers().then((response) => console.log("ok"));
-  }, []);
-
+  const [events] = useHttp(fetchEvents);
+  if (!events) {
+    <h1>Loading...</h1>;
+  }
+  console.log(events);
   return (
     <div>
       <h2>Events</h2>
-      <ul></ul>
+      <ul>
+        {events?.map((event) => (
+          <CardOfEvent event={event} key={event._id} />
+        ))}
+      </ul>
     </div>
   );
 };

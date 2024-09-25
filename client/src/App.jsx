@@ -11,7 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Events />} />
         <Route path="participants" element={<Participants />} />
-        <Route path="registration" element={<Registration />} />
+        <Route path=":eventId/registration" element={<Registration />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </div>
