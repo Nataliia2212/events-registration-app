@@ -18,6 +18,13 @@ const CardOfEvent = ({ event }) => {
       <Link state={{ from: location }} to={`${_id.toString()}/registration`}>
         Register
       </Link>
+      <Link
+        state={{ from: location }}
+        to={`${_id.toString()}/participants`}
+        title={name}
+      >
+        View
+      </Link>
     </div>
   );
 };

@@ -19,7 +19,7 @@ const eventSchema = new Schema(
     },
     organizer: {
       type: Schema.Types.ObjectId,
-      ref: "user",
+      ref: "users",
     },
   },
   { versionKey: false }

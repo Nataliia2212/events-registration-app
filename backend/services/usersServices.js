@@ -6,7 +6,6 @@ export const createUser = (data) => {
   return User.create(data);
 };
 
-export const listUsers = ({ filter = {}, fields, setting = {} }) =>
-  User.find(filter, fields, setting);
+export const listUsers = (filter) => User.find(filter);
 
 export const getUserById = async (_id) => User.findById(_id);

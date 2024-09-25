@@ -1,7 +1,7 @@
 import React from "react";
 import { fetchEvents } from "../services/api";
 import { useHttp } from "../hooks/useHTTP";
-import CardOfEvent from "./CardOfEvent";
+import CardOfEvent from "./CardOfEvent/CardOfEvent";
 
 const Events = () => {
   const [events] = useHttp(fetchEvents);

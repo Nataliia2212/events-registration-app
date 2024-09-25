@@ -9,4 +9,5 @@ export const userRegisterSchema = Joi.object({
   heardAbout: Joi.string()
     .valid(...heardAbout)
     .required(),
+  eventId: Joi.string(),
 });

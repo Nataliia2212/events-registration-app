@@ -6,7 +6,11 @@ const API = axios.create({
 
 export const fetchEvents = () => API.get("/api/events");
 
-export const fetchUsers = () => API.get("/api/users");
+export const fetchEventById = (id) => API.get(`/api/events/${id}`);
+
+export const registerUser = (data) => API.post("/api/users/register", data);
+
+export const fetchUsers = (id) => API.get(`/api/users/${id}`);
 
 export const createUser = (userData) => API.post("/users", userData);
 

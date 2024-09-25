@@ -19,6 +19,8 @@ userRouter.post(
 
 userRouter.get("/", usersControllers.getAllUsers);
 
+userRouter.get("/:eventId", usersControllers.getAllUsersOnEvent);
+
 userRouter.get("/:id", usersControllers.getOneUser);
 
 export default userRouter;
