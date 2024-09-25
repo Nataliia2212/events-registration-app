@@ -4,6 +4,7 @@ import cors from "cors";
 import morgan from "morgan";
 
 import "dotenv/config";
+import eventsRouter from "./routes/eventsRouter.js";
 
 const app = express();
 const { DB_HOST, PORT = 5000 } = process.env;
@@ -11,8 +12,16 @@ const { DB_HOST, PORT = 5000 } = process.env;
 app.use(morgan("tiny"));
 app.use(cors());
 app.use(express.json());
-app.get("/events", (req, res) => {
-  res.send("Hello from the backend!");
+
+app.use("/api/events", eventsRouter);
+
+app.use((_, res) => {
+  res.status(404).json({ message: "Route not found" });
+});
+
+app.use((err, req, res, next) => {
+  const { status = 500, message = "Server error" } = err;
+  res.status(status).json({ message });
 });
 
 mongoose
