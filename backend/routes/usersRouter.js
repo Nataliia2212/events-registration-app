@@ -17,4 +17,8 @@ userRouter.post(
   usersControllers.registerUser
 );
 
+userRouter.get("/", usersControllers.getAllUsers);
+
+userRouter.get("/:id", usersControllers.getOneUser);
+
 export default userRouter;

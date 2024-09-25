@@ -16,7 +16,7 @@ app.use(express.json());
 
 app.use("/api/events", eventsRouter);
 
-app.use("/api/events", userRouter);
+app.use("/api/users", userRouter);
 
 app.use((_, res) => {
   res.status(404).json({ message: "Route not found" });
