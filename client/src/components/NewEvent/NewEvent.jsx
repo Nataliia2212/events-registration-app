@@ -25,13 +25,11 @@ const NewEvent = () => {
         const organizer = response.data._id;
         console.log(organizer);
         createEvent({ name, description, date, organizer });
-        if (!response.error) {
-          navigate("/");
-        }
       })
       .catch((error) => {
         toast.error("Submission error:", error);
-      });
+      })
+      .finally(navigate("/"));
   };
 
   return (

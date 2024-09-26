@@ -7,20 +7,11 @@ import { Link, useLocation } from "react-router-dom";
 const Events = () => {
   const location = useLocation();
   const [events] = useHttp(fetchEvents);
+
   if (!events) {
     return <h1>Loading...</h1>;
   }
-  console.log(events);
-  // const organizer = events.organizer;
-  // const [user] = useHttp(fetchUsers, organizer);
-  // console.log(user);
-  // if (!user) {
-  //   <h1>Loading...</h1>;
-  // }
 
-  if (!events) {
-    <h2>Loading...</h2>;
-  }
   return (
     <>
       <div className={s.wrap}>

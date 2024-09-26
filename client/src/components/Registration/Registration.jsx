@@ -36,8 +36,8 @@ const Registration = () => {
   };
   return (
     <div>
-      <h1>Event registration</h1>
-      <form onSubmit={handleSubmit(submit)}>
+      <h1 className={s.title}>Event registration</h1>
+      <form className={s.form} onSubmit={handleSubmit(submit)}>
         <InputField
           id="email"
           name="email"
@@ -56,8 +56,10 @@ const Registration = () => {
           register={register}
           error={errors.name?.message}
         />
-        <fieldset className={s.fieldsetGender}>
-          <legend className={s.legend}>Your gender identity</legend>
+        <fieldset className={s.fieldset}>
+          <legend className={s.legend}>
+            Where did you hear about this event?
+          </legend>
           <RadioButton
             id="Social media"
             name="heardAbout"

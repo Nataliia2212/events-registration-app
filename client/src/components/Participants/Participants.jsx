@@ -3,6 +3,8 @@ import { useHttp } from "../../hooks/useHTTP";
 import { fetchEventById, fetchUsers } from "../../services/api";
 import { useParams } from "react-router-dom";
 
+import s from "./Participants.module.css";
+
 const Participants = () => {
   const { eventId } = useParams();
 
@@ -15,11 +17,11 @@ const Participants = () => {
   }
   console.log(participants);
   return (
-    <div>
+    <div className={s.wrap}>
       <h1>{event?.name} participants</h1>
-      <ul>
+      <ul className={s.list}>
         {participants?.map(({ _id, name, email }) => (
-          <li key={_id}>
+          <li key={_id} className={s.item}>
             <h3>{name}</h3>
             <p>{email}</p>
           </li>

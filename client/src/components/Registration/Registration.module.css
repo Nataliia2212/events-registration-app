@@ -5,52 +5,23 @@
   font-size: 26px;
   line-height: 1.23077;
   color: #2f2f2f;
+  text-align: center;
 }
 
 .form {
   background-color: transparent;
-  width: 256px;
-
-  @media screen and (min-width: 768px) {
-    width: 656px;
-  }
-
-  @media screen and (min-width: 1440px) {
-    width: 960px;
-  }
+  width: 550px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.mainWrap {
-  @media screen and (min-width: 1440px) {
-    display: flex;
-    margin-top: 24px;
-    gap: 24px;
-  }
-
-  @media screen and (min-width: 768px) {
-    width: 392px;
-  }
-}
-
-.fieldsetGender {
+.fieldset {
   display: flex;
   gap: 24px;
   padding: 0;
   margin: 0;
   border: none;
-}
-
-.wrapInfo {
-  margin-top: 52px;
-}
-
-.fieldset {
-  padding: 0;
-  border: none;
-
-  @media screen and (max-width: 1439px) {
-    margin-top: 24px;
-  }
 }
 
 .legend {

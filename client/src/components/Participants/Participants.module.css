@@ -1,0 +1,16 @@
+.wrap {
+  padding: 20px;
+}
+
+.list {
+  display: flex;
+  gap: 12;
+}
+
+.item {
+  background-color: lightblue;
+  min-width: 100px;
+  padding: 10px;
+  border: 1px solid beige;
+  border-radius: 8px;
+}
