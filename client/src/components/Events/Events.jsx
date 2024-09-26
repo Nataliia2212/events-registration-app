@@ -1,9 +1,13 @@
 import React from "react";
-import { fetchEvents, fetchUsers } from "../../services/api";
-import { useHttp } from "../../hooks/useHTTP";
-import CardOfEvent from "../CardOfEvent/CardOfEvent";
-import s from "./Events.module.css";
 import { Link, useLocation } from "react-router-dom";
+
+import CardOfEvent from "../CardOfEvent/CardOfEvent";
+
+import { useHttp } from "../../hooks/useHTTP";
+import { fetchEvents } from "../../services/api";
+
+import s from "./Events.module.css";
+
 const Events = () => {
   const location = useLocation();
   const [events] = useHttp(fetchEvents);

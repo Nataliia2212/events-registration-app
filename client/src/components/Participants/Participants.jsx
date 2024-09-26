@@ -1,7 +1,8 @@
 import React from "react";
+import { useParams } from "react-router-dom";
+
 import { useHttp } from "../../hooks/useHTTP";
 import { fetchEventById, fetchUsers } from "../../services/api";
-import { useParams } from "react-router-dom";
 
 import s from "./Participants.module.css";
 
@@ -10,12 +11,10 @@ const Participants = () => {
 
   const [participants] = useHttp(fetchUsers, eventId);
   const [event] = useHttp(fetchEventById, eventId);
-  console.log(event);
 
   if (!participants && !event) {
-    <h1>Loading...</h1>;
+    return <h1>Loading...</h1>;
   }
-  console.log(participants);
   return (
     <div className={s.wrap}>
       <h1>{event?.name} participants</h1>

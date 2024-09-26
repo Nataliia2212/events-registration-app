@@ -24,11 +24,7 @@ const getAllUsers = async (req, res) => {
 };
 
 const getAllUsersOnEvent = async (req, res) => {
-  console.log(req);
   const { eventId } = req.params;
-
-  console.log(req.params);
-  console.log(eventId);
 
   const event = await getEventById(eventId);
   if (!event) {

@@ -2,14 +2,15 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 import InputField from "../InputField/InputField";
-import { yupResolver } from "@hookform/resolvers/yup";
 import RadioButton from "../RadioButton/RadioButton";
+
 import { registerSchema } from "../../Schemas/registerSchema";
+import { registerUser } from "../../services/api";
 
 import s from "./Registration.module.css";
-import { registerUser } from "../../services/api";
 
 const Registration = () => {
   const { eventId } = useParams();
@@ -23,7 +24,6 @@ const Registration = () => {
   const navigate = useNavigate();
 
   const submit = (data) => {
-    console.log(data);
     registerUser({ ...data, eventId })
       .then((response) => {
         if (!response.error) {

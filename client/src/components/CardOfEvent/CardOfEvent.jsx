@@ -1,8 +1,11 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import s from "./CardOfEvent.module.css";
+
 import { fetchUserById } from "../../services/api";
 import { useHttp } from "../../hooks/useHTTP";
+
+import s from "./CardOfEvent.module.css";
+
 const CardOfEvent = ({ event }) => {
   const location = useLocation();
 

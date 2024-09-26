@@ -1,11 +1,13 @@
 import React from "react";
-
-import s from "./NewEvent.module.css";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import InputField from "../InputField/InputField";
-import { createEvent, registerUser } from "../../services/api";
 import { toast } from "react-toastify";
+
+import InputField from "../InputField/InputField";
+
+import { createEvent, registerUser } from "../../services/api";
+
+import s from "./NewEvent.module.css";
 
 const NewEvent = () => {
   const {
@@ -17,14 +19,12 @@ const NewEvent = () => {
   const navigate = useNavigate();
 
   const submit = (data) => {
-    console.log(data);
     const { email, nameOrganizer, name, description, date } = data;
     registerUser({ email, name: nameOrganizer })
       .then((response) => {
-        console.log(response.data);
         const organizer = response.data._id;
-        console.log(organizer);
         createEvent({ name, description, date, organizer });
+        toast.success("Event created");
       })
       .catch((error) => {
         toast.error("Submission error:", error);
