@@ -17,7 +17,14 @@ const Participants = () => {
   return (
     <div>
       <h1>{event?.name} participants</h1>
-      <p>jkljhgghjk</p>
+      <ul>
+        {participants?.map(({ _id, name, email }) => (
+          <li key={_id}>
+            <h3>{name}</h3>
+            <p>{email}</p>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

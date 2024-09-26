@@ -20,7 +20,6 @@ const userSchema = new Schema(
     heardAbout: {
       type: String,
       enum: heardAbout,
-      required: [true, "Where did you hear about this event?"],
       default: "Social media",
     },
     eventId: {

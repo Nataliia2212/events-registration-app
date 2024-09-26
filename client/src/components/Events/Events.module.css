@@ -1,0 +1,38 @@
+.wrap {
+  display: flex;
+  justify-content: space-around;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 48px;
+  column-gap: 24px;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 30px;
+  min-width: 50px;
+  height: 44px;
+  border-radius: 10px;
+  background-color: #407bff;
+  margin-right: 24px;
+
+  border: transparent;
+  box-shadow: 0 4px 8px 0 rgba(64, 123, 255, 0.34);
+  transition: box-shadow 0.3s ease-in-out;
+
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.33333;
+  color: #fff;
+
+  &:hover {
+    box-shadow: 0 4px 14px 0 rgba(64, 123, 255, 0.54);
+  }
+  &:active {
+    box-shadow: 0 transparent;
+  }
+}

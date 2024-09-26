@@ -1,0 +1,89 @@
+.title {
+  margin-bottom: 24px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 1.23077;
+  color: #2f2f2f;
+}
+
+.form {
+  background-color: transparent;
+  width: 256px;
+
+  @media screen and (min-width: 768px) {
+    width: 656px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 960px;
+  }
+}
+
+.mainWrap {
+  @media screen and (min-width: 1440px) {
+    display: flex;
+    margin-top: 24px;
+    gap: 24px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 392px;
+  }
+}
+
+.fieldsetGender {
+  display: flex;
+  gap: 24px;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+.wrapInfo {
+  margin-top: 52px;
+}
+
+.fieldset {
+  padding: 0;
+  border: none;
+
+  @media screen and (max-width: 1439px) {
+    margin-top: 24px;
+  }
+}
+
+.legend {
+  margin-bottom: 12px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.11111;
+  color: #2f2f2f;
+}
+
+.button {
+  display: block;
+  padding: 10px 30px;
+  width: 160px;
+  height: 44px;
+  border-radius: 10px;
+  background-color: #407bff;
+  margin-left: auto;
+  border: transparent;
+  box-shadow: 0 4px 8px 0 rgba(64, 123, 255, 0.34);
+  transition: box-shadow 0.3s ease-in-out;
+
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.33333;
+  color: #fff;
+
+  &:hover {
+    box-shadow: 0 4px 14px 0 rgba(64, 123, 255, 0.54);
+  }
+  &:active {
+    box-shadow: 0 transparent;
+  }
+}

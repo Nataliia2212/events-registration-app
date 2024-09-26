@@ -1,24 +1,35 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-
+import s from "./CardOfEvent.module.css";
+import { fetchUserById } from "../../services/api";
+import { useHttp } from "../../hooks/useHTTP";
 const CardOfEvent = ({ event }) => {
   const location = useLocation();
 
   const { _id, name, description, date, organizer } = event;
+  const [user] = useHttp(fetchUserById, organizer);
+  if (!user) {
+    return <h2>Loading</h2>;
+  }
   return (
-    <div>
+    <div className={s.wrap}>
       <h2>{name}</h2>
       <p>{description}</p>
       <p>
         Date of event: <span>{date}</span>
       </p>
       <p>
-        organizer <span>{organizer}</span>
+        organizer <span>{user.name}</span>
       </p>
-      <Link state={{ from: location }} to={`${_id.toString()}/registration`}>
+      <Link
+        className={s.button}
+        state={{ from: location }}
+        to={`${_id.toString()}/registration`}
+      >
         Register
       </Link>
       <Link
+        className={s.button}
         state={{ from: location }}
         to={`${_id.toString()}/participants`}
         title={name}

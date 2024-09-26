@@ -4,9 +4,9 @@ import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 
 import InputField from "../InputField/InputField";
-// import { yupResolver } from "@hookform/resolvers/yup";
+import { yupResolver } from "@hookform/resolvers/yup";
 import RadioButton from "../RadioButton/RadioButton";
-// import { registerSchema } from "../../Schemas/registerSchema";
+import { registerSchema } from "../../Schemas/registerSchema";
 
 import s from "./Registration.module.css";
 import { registerUser } from "../../services/api";
@@ -18,7 +18,7 @@ const Registration = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm({ resolver: yupResolver(registerSchema) });
 
   const navigate = useNavigate();
 
@@ -81,7 +81,7 @@ const Registration = () => {
             register={register}
           />
         </fieldset>
-        <button>Register</button>
+        <button className={s.button}>Register</button>
       </form>
     </div>
   );
